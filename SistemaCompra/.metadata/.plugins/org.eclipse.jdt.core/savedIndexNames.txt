@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+D:\Curso Atos-UFN - Java\Exercicios 01\SistemaCompra\.metadata\.plugins\org.eclipse.jdt.core

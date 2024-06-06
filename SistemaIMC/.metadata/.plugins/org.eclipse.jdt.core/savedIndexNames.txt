@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\Curso Atos-UFN - Java\Exercicios 01\SistemaIMC\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
