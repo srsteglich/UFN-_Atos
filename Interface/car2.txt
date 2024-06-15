@@ -1,0 +1,5 @@
+Item -  Nome    -  Preço  - Quant -  Subtotal: 
+ 1   |  TV 60pol   3500,00   1   3500,00
+ 2   |  Par Meia   6,00   5   30,00
+ 3   |  Carne 1º   55,55   2   111,10
+Total:  3641,10 
