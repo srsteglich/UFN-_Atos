@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt_BR" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Pessoas</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container is-fullhd">
+      <article class="tile is-child notification is-info is-flex is-flex-direction-column is-align-items-center">
+        <p class="title">LISTA DE PESSOAS</p>
+        <a href="/pessoa/cadastrar" class="button is-link is-align-self-flex-start">Novo Cadastro</a>
+      </article>
+      <table id="example" class="table is-striped is-hover-able" style="width:100%">
+        <thead>
+          <tr>
+            <td><abbr title="id">Id</abbr></td>
+            <td><abbr title="nome">Nome</abbr></td>
+            <td><abbr title="email">Email</abbr></td>
+            <td><abbr title="fone">Fone</abbr></td>
+            <td><abbr title="acao">Ações</abbr></td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="p : ${listaPessoa}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.nome}"></td>
+            <td th:text="${p.email}"></td>
+            <td th:text="${p.fone}"></td>
+            <td>
+                <a th:href="@{/pessoa/alterar/{id}(id=${p.id})}" class="button is-primary">Alterar</a>
+                <a th:href="@{/pessoa/excluir/{id}(id=${p.id})}" class="button is-danger">Deletar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@1.0.1/js/bulma.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bulma.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/dataTables.bulma.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                language: {
+                    lengthMenu: "Mostrar _MENU_ registros por página",
+                    info: "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    zeroRecords: "Nenhum registro encontrado",
+                    emptyTable: "Não há dados disponíveis na tabela",
+                    loadingRecords: "Carregando...",
+                    processing: "Processando...",
+                    searchPlaceholder: "Pesquisar",
+                    paginate: {
+                        first:      "Primeiro",
+                        previous:   "Anterior",
+                        next:       "Próximo",
+                        last:       "Último"
+                    },
+                    aria: {
+                        sortAscending:  ": ativar para ordenar a coluna em ordem crescente",
+                        sortDescending: ": ativar para ordenar a coluna em ordem decrescente"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

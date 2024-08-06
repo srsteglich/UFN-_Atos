@@ -1,0 +1,11 @@
+.modal-background {
+    background-color: rgba(10, 10, 10, 0.2);
+}
+
+.table.dataTable thead, table.dataTable tfoot {
+    background-color: hsl(0, 0%, 48%);
+}
+
+.table thead td, .table tfoot td {
+    color: hsl(0, 0%, 96%);
+}

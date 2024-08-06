@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Cadastro da Pessoa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <form action="#" th:action="@{/pessoa/alterar}" th:object="${pessoa}" method="post">
+
+        <div id="meuModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">ALTERAR PESSOA</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div>
+                        <label for="" class="label is-medium">ID</label>
+                        <input class="input is-normal" type="text" th:field="*{id}" readonly>
+                    </div>
+                    <div>
+                        <label for="" class="label is-medium">Nome</label>
+                        <input class="input is-normal" type="text" th:field="*{nome}" required>
+                    </div>
+                    <div>
+                        <label for="" class="label is-medium">Email</label>
+                        <input class="input is-normal" type="email" th:field="*{email}" required>
+                    </div>
+                    <div>
+                        <label for="" class="label is-medium">Fone</label>
+                        <input class="input is-normal" type="text" th:field="*{fone}" required>
+                    </div>
+
+                </section>
+                <footer class="modal-card-foot">
+                    <div class="buttons">
+                        <button type="submit" class="button is-link is-medium is-responsive">Alterar</button>
+                        <button id="myButton" class="button is-dark is-medium is-responsive" type="submit">Sair</button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </form>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@1.0.1/js/bulma.min.js"></script>
+    <script src="/js/modal.js"></script>
+</body>
+</html>

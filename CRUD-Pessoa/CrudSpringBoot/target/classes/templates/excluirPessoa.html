@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Pessoa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div id="meuModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">EXCLUIR PESSOA</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div style="display: flex;">
+                    <label class="label is-medium" style="margin-right: 5px;">Deseja remover o registro de</label>
+                    <label id="nomePessoa" class="label is-medium" th:text="${pessoa.nome}" style="margin-right: 5px;"></label>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <form th:action="@{/pessoa/excluir/{id}(id=${pessoa.id})}" th:object="${pessoa}" method="post">
+                    <input type="hidden" th:field="*{id}" />
+                    <button type="submit" class="button is-link is-medium is-responsive">Sim</button>
+                    <button id="myButton" class="button is-dark is-medium is-responsive" type="button">Não</button>
+                </form>
+            </footer>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@1.0.1/js/bulma.min.js"></script>
+    <script src="/js/modal.js"></script>
+</body>
+</html>

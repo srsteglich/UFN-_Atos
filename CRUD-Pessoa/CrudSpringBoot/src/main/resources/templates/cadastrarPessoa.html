@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt_BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Incluir Pessoa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <form action="#" th:action="@{/pessoa/save}" th:object="${pessoa}" method="post">
+         <div id="meuModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">INCLUIR NOVA PESSOA </p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div>
+                        <label for="" class="label is-medium">Nome</label>
+                        <input class="input is-normal" type="text" placeholder="Meu Nome"  th:field="*{nome}" required>
+                    </div>
+                    <div>
+                        <label for="" class="label is-medium">Email</label>
+                        <input class="input is-normal" type="email" placeholder="email@" th:field="*{email}" required>
+
+                    </div>
+                    <div>
+                        <label for="" class="label is-medium">Fone</label>
+                        <input class="input is-normal" type="text" placeholder="(00)00000-0000"  th:field="*{fone}" required>
+                    </div>
+
+                </section>
+                <footer class="modal-card-foot">
+                    <div class="buttons">
+                        <button class="button is-medium is-link is-responsive">Salvar</button>
+                        <button id="myButton" class="button is-dark is-medium is-responsive" type="submit">Sair</button>
+                        <button class="button is-warning is-medium is-responsive" type="reset">Limpar Formulário</button>
+                    </div>
+                </footer>
+            </div>
+          </div>
+    </form>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma@1.0.1/js/bulma.min.js"></script>
+    <script src="/js/modal.js"></script>
+ </body>
+ </html>
